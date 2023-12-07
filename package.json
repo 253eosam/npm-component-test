@@ -1,9 +1,16 @@
 {
   "name": "@253eosam/react-figma-svg-icon-component",
   "version": "0.0.1",
-  "module": "build/static/js/main.333e2b7b.js",
-  "main": "build/static/js/main.333e2b7b.js",
-  "private": true,
+  "main": "dist/TestComponent.js",
+  "private": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/253eosam/react-figma-svg-icon-component"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -14,13 +21,17 @@
     "web-vitals": "^2.1.4"
   },
   "babel": {
-    "presets": ["@babel/preset-react"]
+    "presets": [
+      "@babel/preset-react"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "rimraf dist",
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/lib --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +53,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
-    "@babel/preset-react": "^7.23.3"
+    "@babel/preset-env": "^7.23.5",
+    "@babel/preset-react": "^7.23.3",
+    "cross-env": "^7.0.3"
   }
 }
